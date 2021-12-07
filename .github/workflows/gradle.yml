@@ -29,8 +29,9 @@ jobs:
       uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
       with:
         arguments: build
- run: ./gradlew build
-  - uses: actions/upload-artifact@v2
-    with:
+    - name: Last
+      run: ./gradlew build
+      - uses: actions/upload-artifact@v2
+      with:
       name: Package
       path: build/libs
